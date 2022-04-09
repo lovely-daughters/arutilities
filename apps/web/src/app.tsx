@@ -1,4 +1,3 @@
 export default function App() {
-  console.log("AAAA");
-  return <div>AAAAAA</div>;
+  return <div>Shut the fuck up retard</div>;
 }
