@@ -1,0 +1,6 @@
+{
+  "name": "@aru/messages",
+  "description": "Interface definitions for chrome extension messaging",
+  "version": "0.0.0",
+  "private": true
+}

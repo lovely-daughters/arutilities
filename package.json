@@ -1,0 +1,12 @@
+{
+  "name": "arutilities",
+  "description": "Chrome utilities intended for PRIVATE use",
+  "version": "68",
+  "private": "true",
+  "workspaces": [
+    "apps/extension",
+    "apps/server",
+    "apps/web",
+    "libs/messages"
+  ]
+}

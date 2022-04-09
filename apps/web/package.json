@@ -1,0 +1,6 @@
+{
+  "name": "@aru/web",
+  "description": "Remote frontend that gets injected to the chrome extension via iframe",
+  "version": "0.0.0",
+  "private": true
+}

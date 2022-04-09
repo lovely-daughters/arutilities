@@ -1,0 +1,6 @@
+{
+  "name": "@aru/extension",
+  "description": "Contains chrome extension content/background scripts",
+  "version": "0.0.0",
+  "private": true
+}

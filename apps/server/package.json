@@ -1,0 +1,6 @@
+{
+  "name": "@aru/server",
+  "description": "Backend server used to give more flexibility in file system interactions",
+  "version": "0.0.0",
+  "private": true
+}
