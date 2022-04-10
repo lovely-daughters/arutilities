@@ -37,7 +37,7 @@ const config: Configuration = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({ openAnalyzer: false }),
   ],
   output: {
     path: path.resolve(__dirname, "build"),
@@ -45,9 +45,12 @@ const config: Configuration = {
   },
   devtool: "inline-source-map",
   devServer: {
-    static: path.resolve(__dirname, "build"),
+    static: {
+      directory: path.resolve(__dirname, "public"),
+    },
     port: 8000,
     hot: true,
+    open: false,
   },
 };
 

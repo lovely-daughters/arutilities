@@ -1,0 +1,32 @@
+{
+  "name": "arutilities",
+  "description": "Chrome extension utilities intended for personal use.",
+  "version": "68",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.twitter.com/*"],
+      "js": ["twitter.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/aru_16.png",
+      "32": "/images/aru_32.png",
+      "48": "/images/aru_64.png",
+      "128": "/images/aru_128.png"
+    }
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "/images/aru_16.png",
+    "32": "/images/aru_32.png",
+    "48": "/images/aru_64.png",
+    "128": "/images/aru_128.png"
+  },
+  "permissions": ["storage", "activeTab", "downloads"]
+}
