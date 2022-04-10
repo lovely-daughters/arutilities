@@ -1,7 +1,99 @@
 import { TwitterDownload } from "@aru/messages/src/TwitterDownload";
 
-let scrolling = false;
-let likeButtons = document.querySelectorAll('div[data-testid="like"]');
+const tweetUrlRegex = /^\/(.+)\/status\/([0-9]+)$/;
+const srcNameReplaceRegex =
+  /^(https\:\/\/pbs\.twimg\.com\/media\/.+\?format=.+&name=)(.+)$/;
+const srcFormatMatchRegex =
+  /^https\:\/\/pbs\.twimg\.com\/media\/.+\?format=(.+)&name=.+$/;
+
+const findTweetSrcs = (tweet: HTMLElement) => {
+  const returnSrcs = [];
+
+  const descendantImages = tweet.querySelectorAll(
+    'img[alt="Image"].css-9pa8cd'
+  );
+  console.log(descendantImages);
+
+  for (let index = 0; index < descendantImages.length; index++) {
+    const image = descendantImages[index];
+    const src = image.getAttribute("src");
+
+    console.log(src);
+
+    if (src) {
+      returnSrcs.push(src);
+    }
+  }
+
+  return returnSrcs;
+};
+
+const findTweetUrl = (tweet: HTMLElement) => {
+  const descendantLinks = tweet.querySelectorAll("a[role='link']");
+  console.log(descendantLinks);
+
+  for (let index = 0; index < descendantLinks.length; index++) {
+    const link = descendantLinks[index];
+    const href = link.getAttribute("href");
+
+    if (href && tweetUrlRegex.test(href)) {
+      return href;
+    }
+  }
+
+  return null;
+};
+
+const extractDataFromTweetUrl = (
+  tweetUrl: string | null
+): { user: string; status: string } | null => {
+  if (tweetUrl) {
+    const match = tweetUrl.match(tweetUrlRegex);
+    if (match) {
+      console.log(match);
+      return {
+        user: match[1],
+        status: match[2],
+      };
+    }
+  }
+  return null;
+};
+
+const sendMessageTwitterDownload = (
+  user: string,
+  status: string,
+  index: number,
+  src: string,
+  ext: string
+) => {
+  chrome.runtime.sendMessage(
+    TwitterDownload.generateMessage(user, status, index, src, ext),
+    () => {
+      console.log("finished");
+    }
+  );
+};
+
+const downloadTweetImages = (tweet: HTMLElement) => {
+  const srcs = findTweetSrcs(tweet);
+  const data = extractDataFromTweetUrl(findTweetUrl(tweet));
+  if (data && srcs) {
+    for (let index = 0; index < srcs.length; index++) {
+      const src = srcs[index];
+      const formatMatch = src.match(srcFormatMatchRegex);
+      if (formatMatch) {
+        sendMessageTwitterDownload(
+          data.user,
+          data.status,
+          index,
+          src.replace(srcNameReplaceRegex, "$1large"),
+          formatMatch[1]
+        );
+      }
+    }
+  }
+};
 
 const reactRoot = document.getElementById("react-root");
 reactRoot?.insertAdjacentHTML(
@@ -37,54 +129,17 @@ document.addEventListener("mousedown", (event: any) => {
   if (likeCheck && tweetElement) {
     console.log(likeCheck);
     console.log(tweetElement);
-    const descendantImages = tweetElement.querySelectorAll(
-      'img[alt="Image"].css-9pa8cd'
-    );
-    console.log(descendantImages);
 
-    descendantImages.forEach((image) => {
-      const src = image.getAttribute("src");
-      if (src) {
-        chrome.runtime.sendMessage(
-          TwitterDownload.generateMessage(src, "test")
-        );
-        console.log("message sent");
-      }
-    });
+    downloadTweetImages(tweetElement);
+    // Download Each Image in Tweet
+    // descendantImages.forEach((image) => {
+    //   const src = image.getAttribute("src");
+    //   if (src) {
+    //     chrome.runtime.sendMessage(
+    //       TwitterDownload.generateMessage(src, "test")
+    //     );
+    //     console.log("message sent");
+    //   }
+    // });
   }
-
-  // const ancestor: HTMLElement = event.path[9];
-  // console.log(ancestor);
-  // console.log(descendantImages);
-  // const lastImage = descendantImages[descendantImages.length - 1];
-  // if (
-  //   lastImage &&
-  //   lastImage.getAttribute("alt") === "Image" &&
-  //   lastImage.getAttribute("class") === "css-9pa8cd"
-  // ) {
-  //   const src = lastImage.getAttribute("src");
-  //   console.log(src);
-  // }
 });
-
-// likeButtons.forEach((likeButton) => {
-//   likeButton.addEventListener("mousedown", (event) => {
-//     console.log(event.target);
-//   });
-// });
-
-// window.onscroll = function () {
-//   scrolling = true;
-// };
-
-// const timer = setInterval(() => {
-//   scrolling = false;
-// }, 1000);
-
-// setInterval(() => {
-//   console.log(scrolling);
-//   if (scrolling) {
-//     likeButtons = document.querySelectorAll('div[data-testid="like"]');
-//     console.log(likeButtons);
-//   }
-// }, 250);

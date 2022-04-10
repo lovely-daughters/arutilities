@@ -1,16 +1,33 @@
-export interface AruMessage {
+export interface AruMessage<PayloadType> {
   name: string;
-  payload: any;
+  payload: PayloadType;
+}
+
+export interface TwitterDownloadPayload {
+  user: string;
+  status: string;
+  index: number;
+  src: string;
+  ext: string;
 }
 
 export const TwitterDownload = {
   name: "TwitterDownload",
-  generateMessage: (url: string, artist: string): AruMessage => {
+  generateMessage: (
+    user: string,
+    status: string,
+    index: number,
+    src: string,
+    ext: string
+  ): AruMessage<TwitterDownloadPayload> => {
     return {
       name: "TwitterDownload",
       payload: {
-        url,
-        artist,
+        user,
+        status,
+        index,
+        src,
+        ext,
       },
     };
   },
