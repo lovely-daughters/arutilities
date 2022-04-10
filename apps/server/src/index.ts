@@ -9,6 +9,7 @@ import { readdirSync } from "fs";
 
 const PORT = 5000;
 const TEMP_PATH = path.resolve(__dirname, "..", "temp");
+const DOWNLOADS_PATH = "~/Downloads";
 const ITUNES_AUTO_PATH =
   "/Users/elim-mbp-01/Music/Music/Media.localized/Automatically Add to Music.localized";
 
@@ -29,17 +30,22 @@ app.post("/yt-dlp", (req, res) => {
 
   if (YT_URL_REGEX.test(payload.url)) {
     try {
-      const commandDownload = `yt-dlp -f m4a ${payload.url} -P "${TEMP_PATH}"`;
+      const commandDownload = `yt-dlp -f ${payload.format} ${payload.url} -P "${
+        payload.itunes === "yes" ? TEMP_PATH : DOWNLOADS_PATH
+      }"`;
       console.log(commandDownload);
       execSync(commandDownload);
 
-      const files = readdirSync(TEMP_PATH);
-      files.forEach((file) => {
-        fs.renameSync(
-          path.resolve(TEMP_PATH, file),
-          path.join(ITUNES_AUTO_PATH, file)
-        );
-      });
+      if (payload.itunes) {
+        const files = readdirSync(TEMP_PATH);
+        files.forEach((file) => {
+          console.log("Moving to Itunes");
+          fs.renameSync(
+            path.resolve(TEMP_PATH, file),
+            path.join(ITUNES_AUTO_PATH, file)
+          );
+        });
+      }
 
       res.send("DONE");
     } catch (e) {
