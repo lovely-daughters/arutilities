@@ -161,7 +161,7 @@ const downloadTweetImages = (tweet: HTMLElement) => {
         sendDownloadMessage(
           data.user,
           data.status,
-          index,
+          index + 1,
           src.replace(srcNameReplaceRegex, "$1large"),
           formatMatch[1]
         );
