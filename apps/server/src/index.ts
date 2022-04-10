@@ -28,7 +28,7 @@ app.post("/yt-dlp", (req, res) => {
 
   const payload: YoutubePayload = req.body;
 
-  if (YT_URL_REGEX.test(payload.url)) {
+  if (YT_URL_REGEX.test(payload.url) && payload.format.length === 3) {
     try {
       const commandDownload = `yt-dlp -f ${payload.format} ${payload.url} -P "${
         payload.itunes === "yes" ? TEMP_PATH : DOWNLOADS_PATH
