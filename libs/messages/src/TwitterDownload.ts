@@ -3,6 +3,26 @@ export interface AruMessage<PayloadType> {
   payload: PayloadType;
 }
 
+export interface DownloadPayload {
+  url: string;
+  filename: string;
+}
+
+export const Download = {
+  name: "Download",
+  generateMessage: (
+    url: string,
+    filename: string
+  ): AruMessage<DownloadPayload> => {
+    return {
+      name: "Download",
+      payload: {
+        url,
+        filename,
+      },
+    };
+  },
+};
 export interface TwitterDownloadPayload {
   user: string;
   status: string;
