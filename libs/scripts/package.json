@@ -1,6 +1,6 @@
 {
-  "name": "@aru/messages",
-  "description": "Interface definitions for chrome extension messaging",
+  "name": "@aru/scripts",
+  "description": "Scripts intended to be standalone",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
