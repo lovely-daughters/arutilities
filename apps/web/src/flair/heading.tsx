@@ -5,12 +5,13 @@ export function Heading() {
     <React.Fragment>
       <h1
         style={{
-          color: "orange",
+          color: "#5E1200",
           fontSize: "45px",
           margin: "5px 0 5px 0",
         }}
       >
-        <span style={{ color: "#ff4f4b" }}>ArU</span>tilities
+        <span style={{ color: "#FF7171" }}>ar</span>
+        <span style={{ color: "#FFA030" }}>u</span>tilities
       </h1>
     </React.Fragment>
   );

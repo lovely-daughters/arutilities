@@ -19,35 +19,39 @@ export function Images() {
       <img
         src="/images/Kalpo.png"
         style={{
-          width: "40%",
-          zIndex: 9,
+          opacity: 0.15,
+          width: "130%",
+          zIndex: -4,
           position: "absolute",
-          bottom: -450,
-          right: -70,
+          top: -215,
+          left: -60,
+          // bottom: -450,
+          // right: -70,
         }}
       ></img>
       <img
         src="/images/Monty.png"
         style={{
-          width: "50%",
-          zIndex: 8,
+          opacity: 0.025,
+          width: "60%",
+          zIndex: -5,
           position: "absolute",
           top: -70,
           right: -120,
         }}
       ></img>
 
-      <img
+      {/* <img
         src="/images/Lingers.png"
         style={{
-          opacity: 0.15,
+          opacity: 0.1,
           width: "90%",
           zIndex: -1,
           position: "absolute",
           bottom: 0,
           left: 0,
         }}
-      ></img>
+      ></img> */}
     </React.Fragment>
   );
 }
