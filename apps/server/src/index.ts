@@ -13,7 +13,7 @@ const DOWNLOADS_PATH = "~/Downloads";
 const ITUNES_AUTO_PATH =
   "/Users/elim-mbp-01/Music/Music/Media.localized/Automatically Add to Music.localized";
 
-const YT_URL_REGEX = /^https:\/\/youtu\.b.\/[a-zA-Z0-9]+$/;
+const YT_URL_REGEX = /^https:\/\/youtu\.b.\/[a-zA-Z0-9\-]+$/;
 
 const app = express();
 app.use(cors());
@@ -52,6 +52,9 @@ app.post("/yt-dlp", (req, res) => {
       console.error(e);
       res.status(400).send(e);
     }
+  } else {
+    console.log("Sanitization Failed");
+    res.status(400).send("Sanitization Failed");
   }
 });
 
