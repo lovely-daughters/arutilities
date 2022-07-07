@@ -55,6 +55,12 @@
  * And Done :)
  */
 
+/**
+ * Changelog
+ *
+ * 20220706 - Changed Twitter Language to Chinese. Updated alt="Image" to alt="图像" to work w. CN version. Can change back when using english.
+ */
+
 import { Download } from "@aru/messages/src/TwitterDownload";
 
 const tweetUrlRegex = /^\/(.+)\/status\/([0-9]+)$/;
@@ -87,9 +93,14 @@ const getTweetIfLiked = (eventPath: Array<HTMLElement>): HTMLElement | null => {
 const findTweetSrcs = (tweet: HTMLElement) => {
   const returnSrcs = [];
 
-  const descendantImages = tweet.querySelectorAll(
-    'img[alt="Image"].css-9pa8cd'
-  );
+  // ENGLISH
+  // const descendantImages = tweet.querySelectorAll(
+  //   'img[alt="Image"].css-9pa8cd'
+  // );
+
+  // CN
+  const descendantImages = tweet.querySelectorAll('img[alt="图像"].css-9pa8cd');
+
   console.log(descendantImages);
 
   for (let index = 0; index < descendantImages.length; index++) {
@@ -152,6 +163,7 @@ const sendDownloadMessage = (
 
 const downloadTweetImages = (tweet: HTMLElement) => {
   const srcs = findTweetSrcs(tweet);
+
   const data = extractDataFromTweetUrl(findTweetUrl(tweet));
   if (data && srcs) {
     for (let index = 0; index < srcs.length; index++) {
@@ -172,6 +184,7 @@ const downloadTweetImages = (tweet: HTMLElement) => {
 
 document.addEventListener("mousedown", (event: any) => {
   const tweet = getTweetIfLiked(event.path);
+
   if (tweet) {
     downloadTweetImages(tweet);
   }
