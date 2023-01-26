@@ -183,12 +183,7 @@ const downloadTweetImages = (tweet: HTMLElement) => {
 };
 
 document.addEventListener("mousedown", (event: any) => {
-  // event.path seems to have been removed in a recent chrome update
-  // console.log(event);
-  // console.log(event.composedPath());
-  // console.log(event.path); // getting undefined
-
-  // const tweet = getTweetIfLiked(event.path);
+  // const tweet = getTweetIfLiked(event.path); // event.path deprecated
   const tweet = getTweetIfLiked(event.composedPath());
 
   if (tweet) {
