@@ -69,9 +69,9 @@ const srcNameReplaceRegex =
 const srcFormatMatchRegex =
   /^https\:\/\/pbs\.twimg\.com\/media\/.+\?format=(.+)&name=.+$/;
 
+// After a click anywhere on the page, checks the eventPath to see if the click originates within a like element. If so, return that element.
 const getTweetIfLiked = (eventPath: Array<HTMLElement>): HTMLElement | null => {
   let likeCheck = false;
-
   try {
     for (let index = 0; index < eventPath.length; index++) {
       const element = eventPath[index];
@@ -183,7 +183,13 @@ const downloadTweetImages = (tweet: HTMLElement) => {
 };
 
 document.addEventListener("mousedown", (event: any) => {
-  const tweet = getTweetIfLiked(event.path);
+  // event.path seems to have been removed in a recent chrome update
+  // console.log(event);
+  // console.log(event.composedPath());
+  // console.log(event.path); // getting undefined
+
+  // const tweet = getTweetIfLiked(event.path);
+  const tweet = getTweetIfLiked(event.composedPath());
 
   if (tweet) {
     downloadTweetImages(tweet);
