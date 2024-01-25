@@ -190,3 +190,25 @@ document.addEventListener("mousedown", (event: any) => {
     downloadTweetImages(tweet);
   }
 });
+
+// 2024-01-24: checking keypress when using twitter keybinds
+document.addEventListener("keypress", (event: any) => {
+  if (event.key === "l") {
+    console.log("sanity check");
+    console.log(
+      document.activeElement?.querySelector("div[data-testid='like']")
+    );
+
+    if (document.activeElement?.querySelector("div[data-testid='like']")) {
+      console.log("sanity check 2");
+      downloadTweetImages(document.activeElement as HTMLElement);
+      navigator.clipboard.writeText(
+        (
+          document.activeElement.querySelector("time")
+            ?.parentElement as HTMLLinkElement
+        ).href
+      );
+    }
+    // const tweet = getTweetIfLiked(event.composedPath());
+  }
+});
