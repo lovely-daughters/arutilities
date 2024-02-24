@@ -99,7 +99,8 @@ const findTweetSrcs = (tweet: HTMLElement) => {
   // );
 
   // CN
-  const descendantImages = tweet.querySelectorAll('img[alt="图像"].css-9pa8cd');
+  // const descendantImages = tweet.querySelectorAll('img[alt="图像"].css-9pa8cd');
+  const descendantImages = tweet.querySelectorAll("img.css-9pa8cd");
 
   console.log(descendantImages);
 
