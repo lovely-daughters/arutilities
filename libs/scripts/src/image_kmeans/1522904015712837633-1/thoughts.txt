@@ -1,0 +1,21 @@
+probably going to have black and white. most of background is white. + hair is very prominently white. there's the back of the hair in shade which is darker, which will likely be separated into a separate color. eyes will be mapped to black probably. 
+black will be matted out due to the back of hair being a huge chunk of gray. 
+
+these are the main predictions going into this time to see if they're correct. 
+
+main thing was clothing getting mapped to black. i guess the white is really bright so it one centroid would be pulled far as fuck away. 
+
+line that wavers in intensity throughout due to pen pressure leads to breaks. 
+
+adding a third color will probably separate blacks.
+actually there are more white/gray pixels. wouldn't be surprised. 
+more white so white probably separates further. hair got mapped to black, but wouldn't be surprised if it's close. 
+
+yeah white separated further. more like gray than black.
+anyhow, interesting to see how much line quality suffers if it's not a consistent color. visually there's no issue whatsoever as it's very easily interpretable and readable. 
+
+linework is good after 5. connected and continuous even if value isn't. easily interpretable as one thing. 
+
+interesting to note how eye color is left out. the cluster has too few datapoints and doesn't provide enough pull towards it. 
+
+going to try a more realistic image next. 

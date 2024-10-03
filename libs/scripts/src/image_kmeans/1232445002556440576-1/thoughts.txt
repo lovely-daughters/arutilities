@@ -1,0 +1,30 @@
+csrb post. 
+
+i'm not sure how to predict.
+difficult to visually gauge how close colors are and what the normals between them are even like. distance. 
+
+k2. brightest places including light coming from downstairs mapped to light color. light color is not going to be bright. turned out to be correct. 
+
+next. i think there will be differentiation of black of course. 
+probably the couch will be more discernable next pass from 2->3
+
+yeah couch was more emphasized. so was shading on body. 
+nips have become very prominent. :drooling_face:
+
+interesting to see how the normals are not smooth enough. could be refined a lot more.
+interesting to see how the blacks became even blacker. the highlights also included in there. 
+
+really not sure from 3->4. for sure going to be more body definition. more muddled areas will be discernable. probably the steps in the background become more viewable. i don't think there will be any color to be added in yet. 
+
+image became a lot less aesthetically pleasing after 4. the colors added in are detail patches that just get merged together and have harsh cutoffs. adds so much noise. the face looks better but the random patches on the belly don't look good. 
+
+jumping to 10. colors should separate out a bit more. not confident in what will happen.
+
+oooo. the upper body now looks really good. if the edges are cleaned up i think it'll look very very good. interesting to think about how the simplification creates so much elegance. 
+
+nipple lines are a lot less harsh, which makes them pop less. nipple line was emboldened greatly in k3. softer color made more prominent. 
+
+10xing to 100 now. smooth gradients won't exist, but i'm looking forward to it. 
+looks pretty much exactly the same. just some gradient differences and that's about it. 
+
+nipple phenomena. centroid assigned to similar bra color. before the white centroid was just very far away, leading the lighter gradient transition colors to all be assigned black. led there to be a far more emphasized line around the nipple and far lighter color for the bra. shadow emphasized. centroid moved closer to the bra, assigning some of those old dark line colors to something closer to the bra. 

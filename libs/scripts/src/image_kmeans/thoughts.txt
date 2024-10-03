@@ -1,0 +1,35 @@
+1624427091658936322-1
+
+
+the lineart becomes far more matted.
+i guess that the white pixels dominate and there's comparatively far fewer black pixels. 
+subsequently they have less pull on the centroids. 
+
+kmeans in the current state, just considers value without considering position. 
+there's certain patterns that make the black values far more prominent, than just looking at randomized/shuffled values would suggest. 
+
+wonder how many clusters i would have to add before one ends up near a strong black value. 
+
+wonder why it isn't getting pulled closer. 
+i guess that it's fighting for prominence with gray. 
+
+there is the ability to snap away large distances depending on how the reassignment turns out. they may both initially be near white, but all the white norms are closer to one centroid and therefore get assigned to that. outliers should pull centroids further away. 
+
+
+1578906220462673922-1
+
+
+eye color forms a cluster in space. 
+that will pull centroids.
+lineart forms another cluster in space. will pull centroids. 
+a bunch of clusters floating around, each demanding a dedicated centroid. 
+
+surprised to see that the hair was closer to the skin color. i thought that it could happen, i acknowledged that possibility, but didn't think it would occur. quite interesting and amusing. 
+adding another cluster, i think that the sparser lines that cutoff will then be merged with the hair color and then be assigned separately instead of just as white. 
+
+noticed that loss wasn't getting to the plateau point. added 10 more iterations. introducing another factor. bad experimental design, but w.e. 
+
+interesting. hair was not given a separate color. it was the dude's arms, which i suppose makes sense. visual prominence is not necessarily correlated with color quantity. 
+something interesting to note between k2 and k3. the eyebrows are mapped to white in k2, making the expression seem so much more submissive. k3 has that ferocity baked in. 
+
+adding a fourth centroid should add hair color. and yep that's what happened. i knew that certain features would get a dedicated centroid, making them more prominent, but i thought that hair would be added in a lot sooner than it actually was. visual prominence and color prominence. if i was thorough about experiments i would go and see exactly how close the cutoff was for hair getting prominence over dude's arms. would have to see the centroid breakoff pull. compare white norms for hair vs white forms for arm. probably reached a point where it was slightly closer to white. leading the centroid to get tugged over to the arm color. 
