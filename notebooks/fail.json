@@ -1,0 +1,486 @@
+{
+  "data": {
+      "threaded_conversation_with_injections_v2": {
+          "instructions": [
+              {
+                  "type": "TimelineAddEntries",
+                  "entries": [
+                      {
+                          "entryId": "tweet-1848724379041206357",
+                          "sortIndex": "7374647657813569450",
+                          "content": {
+                              "entryType": "TimelineTimelineItem",
+                              "__typename": "TimelineTimelineItem",
+                              "itemContent": {
+                                  "itemType": "TimelineTweet",
+                                  "__typename": "TimelineTweet",
+                                  "tweet_results": {
+                                      "result": {
+                                          "__typename": "TweetWithVisibilityResults",
+                                          "tweet": {
+                                              "rest_id": "1848724379041206357",
+                                              "has_birdwatch_notes": false,
+                                              "core": {
+                                                  "user_results": {
+                                                      "result": {
+                                                          "__typename": "User",
+                                                          "id": "VXNlcjoxNjEzMzIwNDkwNTgzNzQ0NTEy",
+                                                          "rest_id": "1613320490583744512",
+                                                          "affiliates_highlighted_label": {},
+                                                          "has_graduated_access": true,
+                                                          "is_blue_verified": false,
+                                                          "profile_image_shape": "Circle",
+                                                          "legacy": {
+                                                              "following": false,
+                                                              "can_dm": true,
+                                                              "can_media_tag": false,
+                                                              "created_at": "Wed Jan 11 23:42:43 +0000 2023",
+                                                              "default_profile": true,
+                                                              "default_profile_image": false,
+                                                              "description": "雑多 ￤ ⚠︎︎無断転載禁止",
+                                                              "entities": {
+                                                                  "description": {
+                                                                      "urls": []
+                                                                  },
+                                                                  "url": {
+                                                                      "urls": [
+                                                                          {
+                                                                              "display_url": "marshmallow-qa.com/kome_uo?utm_me…",
+                                                                              "expanded_url": "https://marshmallow-qa.com/kome_uo?utm_medium=url_text&utm_source=promotion",
+                                                                              "url": "https://t.co/4lOoteXbIY",
+                                                                              "indices": [
+                                                                                  0,
+                                                                                  23
+                                                                              ]
+                                                                          }
+                                                                      ]
+                                                                  }
+                                                              },
+                                                              "fast_followers_count": 0,
+                                                              "favourites_count": 275,
+                                                              "followers_count": 27290,
+                                                              "friends_count": 3,
+                                                              "has_custom_timelines": true,
+                                                              "is_translator": false,
+                                                              "listed_count": 124,
+                                                              "location": "",
+                                                              "media_count": 299,
+                                                              "name": "ｺﾒ",
+                                                              "normal_followers_count": 27290,
+                                                              "pinned_tweet_ids_str": [
+                                                                  "1765274272044601411"
+                                                              ],
+                                                              "possibly_sensitive": false,
+                                                              "profile_banner_url": "https://pbs.twimg.com/profile_banners/1613320490583744512/1706085505",
+                                                              "profile_image_url_https": "https://pbs.twimg.com/profile_images/1790207444616159232/jlnkFTSr_normal.jpg",
+                                                              "profile_interstitial_type": "",
+                                                              "screen_name": "kome_uo",
+                                                              "statuses_count": 1326,
+                                                              "translator_type": "none",
+                                                              "url": "https://t.co/4lOoteXbIY",
+                                                              "verified": false,
+                                                              "want_retweets": false,
+                                                              "withheld_in_countries": []
+                                                          },
+                                                          "tipjar_settings": {}
+                                                      }
+                                                  }
+                                              },
+                                              "unmention_data": {},
+                                              "edit_control": {
+                                                  "edit_tweet_ids": [
+                                                      "1848724379041206357"
+                                                  ],
+                                                  "editable_until_msecs": "1729608814000",
+                                                  "is_edit_eligible": true,
+                                                  "edits_remaining": "5"
+                                              },
+                                              "is_translatable": true,
+                                              "views": {
+                                                  "count": "283452",
+                                                  "state": "EnabledWithCount"
+                                              },
+                                              "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+                                              "legacy": {
+                                                  "bookmark_count": 2041,
+                                                  "bookmarked": false,
+                                                  "created_at": "Tue Oct 22 13:53:34 +0000 2024",
+                                                  "conversation_control": {
+                                                      "policy": "Community",
+                                                      "conversation_owner_results": {
+                                                          "result": {
+                                                              "__typename": "User",
+                                                              "legacy": {
+                                                                  "screen_name": "kome_uo"
+                                                              }
+                                                          }
+                                                      }
+                                                  },
+                                                  "conversation_id_str": "1848724379041206357",
+                                                  "display_text_range": [
+                                                      0,
+                                                      3
+                                                  ],
+                                                  "entities": {
+                                                      "hashtags": [],
+                                                      "media": [
+                                                          {
+                                                              "display_url": "pic.x.com/HlKpkQ9sfS",
+                                                              "expanded_url": "https://x.com/kome_uo/status/1848724379041206357/photo/1",
+                                                              "id_str": "1848724371227197440",
+                                                              "indices": [
+                                                                  4,
+                                                                  27
+                                                              ],
+                                                              "media_key": "3_1848724371227197440",
+                                                              "media_url_https": "https://pbs.twimg.com/media/Gaf9BUqawAAXrgg.jpg",
+                                                              "type": "photo",
+                                                              "url": "https://t.co/HlKpkQ9sfS",
+                                                              "ext_media_availability": {
+                                                                  "status": "Available"
+                                                              },
+                                                              "features": {
+                                                                  "large": {
+                                                                      "faces": [
+                                                                          {
+                                                                              "x": 603,
+                                                                              "y": 361,
+                                                                              "h": 103,
+                                                                              "w": 103
+                                                                          },
+                                                                          {
+                                                                              "x": 1025,
+                                                                              "y": 1261,
+                                                                              "h": 225,
+                                                                              "w": 225
+                                                                          }
+                                                                      ]
+                                                                  },
+                                                                  "medium": {
+                                                                      "faces": [
+                                                                          {
+                                                                              "x": 353,
+                                                                              "y": 211,
+                                                                              "h": 60,
+                                                                              "w": 60
+                                                                          },
+                                                                          {
+                                                                              "x": 600,
+                                                                              "y": 738,
+                                                                              "h": 132,
+                                                                              "w": 132
+                                                                          }
+                                                                      ]
+                                                                  },
+                                                                  "small": {
+                                                                      "faces": [
+                                                                          {
+                                                                              "x": 200,
+                                                                              "y": 120,
+                                                                              "h": 34,
+                                                                              "w": 34
+                                                                          },
+                                                                          {
+                                                                              "x": 340,
+                                                                              "y": 418,
+                                                                              "h": 74,
+                                                                              "w": 74
+                                                                          }
+                                                                      ]
+                                                                  },
+                                                                  "orig": {
+                                                                      "faces": [
+                                                                          {
+                                                                              "x": 853,
+                                                                              "y": 511,
+                                                                              "h": 146,
+                                                                              "w": 146
+                                                                          },
+                                                                          {
+                                                                              "x": 1449,
+                                                                              "y": 1783,
+                                                                              "h": 319,
+                                                                              "w": 319
+                                                                          }
+                                                                      ]
+                                                                  }
+                                                              },
+                                                              "sizes": {
+                                                                  "large": {
+                                                                      "h": 2048,
+                                                                      "w": 1443,
+                                                                      "resize": "fit"
+                                                                  },
+                                                                  "medium": {
+                                                                      "h": 1200,
+                                                                      "w": 845,
+                                                                      "resize": "fit"
+                                                                  },
+                                                                  "small": {
+                                                                      "h": 680,
+                                                                      "w": 479,
+                                                                      "resize": "fit"
+                                                                  },
+                                                                  "thumb": {
+                                                                      "h": 150,
+                                                                      "w": 150,
+                                                                      "resize": "crop"
+                                                                  }
+                                                              },
+                                                              "original_info": {
+                                                                  "height": 2894,
+                                                                  "width": 2039,
+                                                                  "focus_rects": [
+                                                                      {
+                                                                          "x": 0,
+                                                                          "y": 0,
+                                                                          "w": 2039,
+                                                                          "h": 1142
+                                                                      },
+                                                                      {
+                                                                          "x": 0,
+                                                                          "y": 0,
+                                                                          "w": 2039,
+                                                                          "h": 2039
+                                                                      },
+                                                                      {
+                                                                          "x": 0,
+                                                                          "y": 0,
+                                                                          "w": 2039,
+                                                                          "h": 2324
+                                                                      },
+                                                                      {
+                                                                          "x": 0,
+                                                                          "y": 0,
+                                                                          "w": 1447,
+                                                                          "h": 2894
+                                                                      },
+                                                                      {
+                                                                          "x": 0,
+                                                                          "y": 0,
+                                                                          "w": 2039,
+                                                                          "h": 2894
+                                                                      }
+                                                                  ]
+                                                              },
+                                                              "allow_download_status": {
+                                                                  "allow_download": true
+                                                              },
+                                                              "media_results": {
+                                                                  "result": {
+                                                                      "media_key": "3_1848724371227197440"
+                                                                  }
+                                                              }
+                                                          }
+                                                      ],
+                                                      "symbols": [],
+                                                      "timestamps": [],
+                                                      "urls": [],
+                                                      "user_mentions": []
+                                                  },
+                                                  "extended_entities": {
+                                                      "media": [
+                                                          {
+                                                              "display_url": "pic.x.com/HlKpkQ9sfS",
+                                                              "expanded_url": "https://x.com/kome_uo/status/1848724379041206357/photo/1",
+                                                              "id_str": "1848724371227197440",
+                                                              "indices": [
+                                                                  4,
+                                                                  27
+                                                              ],
+                                                              "media_key": "3_1848724371227197440",
+                                                              "media_url_https": "https://pbs.twimg.com/media/Gaf9BUqawAAXrgg.jpg",
+                                                              "type": "photo",
+                                                              "url": "https://t.co/HlKpkQ9sfS",
+                                                              "ext_media_availability": {
+                                                                  "status": "Available"
+                                                              },
+                                                              "features": {
+                                                                  "large": {
+                                                                      "faces": [
+                                                                          {
+                                                                              "x": 603,
+                                                                              "y": 361,
+                                                                              "h": 103,
+                                                                              "w": 103
+                                                                          },
+                                                                          {
+                                                                              "x": 1025,
+                                                                              "y": 1261,
+                                                                              "h": 225,
+                                                                              "w": 225
+                                                                          }
+                                                                      ]
+                                                                  },
+                                                                  "medium": {
+                                                                      "faces": [
+                                                                          {
+                                                                              "x": 353,
+                                                                              "y": 211,
+                                                                              "h": 60,
+                                                                              "w": 60
+                                                                          },
+                                                                          {
+                                                                              "x": 600,
+                                                                              "y": 738,
+                                                                              "h": 132,
+                                                                              "w": 132
+                                                                          }
+                                                                      ]
+                                                                  },
+                                                                  "small": {
+                                                                      "faces": [
+                                                                          {
+                                                                              "x": 200,
+                                                                              "y": 120,
+                                                                              "h": 34,
+                                                                              "w": 34
+                                                                          },
+                                                                          {
+                                                                              "x": 340,
+                                                                              "y": 418,
+                                                                              "h": 74,
+                                                                              "w": 74
+                                                                          }
+                                                                      ]
+                                                                  },
+                                                                  "orig": {
+                                                                      "faces": [
+                                                                          {
+                                                                              "x": 853,
+                                                                              "y": 511,
+                                                                              "h": 146,
+                                                                              "w": 146
+                                                                          },
+                                                                          {
+                                                                              "x": 1449,
+                                                                              "y": 1783,
+                                                                              "h": 319,
+                                                                              "w": 319
+                                                                          }
+                                                                      ]
+                                                                  }
+                                                              },
+                                                              "sizes": {
+                                                                  "large": {
+                                                                      "h": 2048,
+                                                                      "w": 1443,
+                                                                      "resize": "fit"
+                                                                  },
+                                                                  "medium": {
+                                                                      "h": 1200,
+                                                                      "w": 845,
+                                                                      "resize": "fit"
+                                                                  },
+                                                                  "small": {
+                                                                      "h": 680,
+                                                                      "w": 479,
+                                                                      "resize": "fit"
+                                                                  },
+                                                                  "thumb": {
+                                                                      "h": 150,
+                                                                      "w": 150,
+                                                                      "resize": "crop"
+                                                                  }
+                                                              },
+                                                              "original_info": {
+                                                                  "height": 2894,
+                                                                  "width": 2039,
+                                                                  "focus_rects": [
+                                                                      {
+                                                                          "x": 0,
+                                                                          "y": 0,
+                                                                          "w": 2039,
+                                                                          "h": 1142
+                                                                      },
+                                                                      {
+                                                                          "x": 0,
+                                                                          "y": 0,
+                                                                          "w": 2039,
+                                                                          "h": 2039
+                                                                      },
+                                                                      {
+                                                                          "x": 0,
+                                                                          "y": 0,
+                                                                          "w": 2039,
+                                                                          "h": 2324
+                                                                      },
+                                                                      {
+                                                                          "x": 0,
+                                                                          "y": 0,
+                                                                          "w": 1447,
+                                                                          "h": 2894
+                                                                      },
+                                                                      {
+                                                                          "x": 0,
+                                                                          "y": 0,
+                                                                          "w": 2039,
+                                                                          "h": 2894
+                                                                      }
+                                                                  ]
+                                                              },
+                                                              "allow_download_status": {
+                                                                  "allow_download": true
+                                                              },
+                                                              "media_results": {
+                                                                  "result": {
+                                                                      "media_key": "3_1848724371227197440"
+                                                                  }
+                                                              }
+                                                          }
+                                                      ]
+                                                  },
+                                                  "favorite_count": 19004,
+                                                  "favorited": true,
+                                                  "full_text": "パとか https://t.co/HlKpkQ9sfS",
+                                                  "is_quote_status": false,
+                                                  "lang": "ja",
+                                                  "possibly_sensitive": false,
+                                                  "possibly_sensitive_editable": true,
+                                                  "quote_count": 16,
+                                                  "reply_count": 0,
+                                                  "retweet_count": 1609,
+                                                  "retweeted": false,
+                                                  "user_id_str": "1613320490583744512",
+                                                  "id_str": "1848724379041206357"
+                                              },
+                                              "quick_promote_eligibility": {
+                                                  "eligibility": "IneligibleNotProfessional"
+                                              }
+                                          },
+                                          "limitedActionResults": {
+                                              "limited_actions": [
+                                                  {
+                                                      "action": "Reply",
+                                                      "prompt": {
+                                                          "__typename": "CtaLimitedActionPrompt",
+                                                          "cta_type": "SeeConversation",
+                                                          "headline": {
+                                                              "text": "Who can reply?",
+                                                              "entities": []
+                                                          },
+                                                          "subtext": {
+                                                              "text": "People the author mentioned can reply",
+                                                              "entities": []
+                                                          }
+                                                      }
+                                                  }
+                                              ]
+                                          }
+                                      }
+                                  },
+                                  "tweetDisplayType": "Tweet",
+                                  "hasModeratedReplies": false
+                              }
+                          }
+                      }
+                  ]
+              },
+              {
+                  "type": "TimelineTerminateTimeline",
+                  "direction": "Top"
+              }
+          ]
+      }
+  }
+}

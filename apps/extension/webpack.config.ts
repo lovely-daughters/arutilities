@@ -8,7 +8,7 @@ const config: Configuration = {
   entry: {
     background: path.resolve("src", "background.ts"),
     // hotReload: path.resolve("src", "reload.ts"),
-    twitter: path.resolve("src", "content-scripts", "twitter-2.ts"),
+    twitter: path.resolve("src", "content-scripts", "twitter-2cp.ts"),
   },
   mode: "development",
   module: {
