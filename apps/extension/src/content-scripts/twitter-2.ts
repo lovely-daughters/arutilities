@@ -264,98 +264,101 @@ document.addEventListener("mousedown", (event: any) => {
         const tweet_id = entry.entryId.split("-")[1];
         console.log(tweet_id);
 
-        const media =
-          entry.content.itemContent.tweet_results.result.legacy.entities
-            .media[0];
-        const type = media.type;
-        console.log(type);
+        const media_ =
+          entry.content.itemContent.tweet_results.result.legacy.entities.media;
 
-        if (type === "photo") {
-          const photo_url = media.media_url_https;
-          const large_photo_url =
-            photo_url.split(".jpg")[0] + "?format=jpg&name=large";
+        for (let i = 0; i < media_.length; i++) {
+          const media = media_[i];
+          const type = media.type;
+          console.log(type);
 
-          sendDownloadMessage(
-            tweet_author,
-            tweet_id,
-            1,
-            large_photo_url,
-            "jpg"
-          );
-          // fetch(large_photo_url)
-          //   .then((response) => response.blob())
-          //   .then((blob) => {
-          //     const blobUrl = URL.createObjectURL(blob);
-          //     // Create an anchor element and trigger a download
-          //     const a = document.createElement("a");
-          //     a.href = blobUrl;
-          //     if (type == "animated_gif" || type == "video") {
-          //       a.download = `${tweet_id}.mp4`;
-          //     } else if (type == "photo") {
-          //       a.download = `${tweet_id}.jpg`;
-          //     }
-          //     document.body.appendChild(a);
-          //     a.click();
-          //     // Clean up
-          //     a.remove();
-          //     URL.revokeObjectURL(blobUrl);
-          //   });
-        } else if (type === "video" || type === "animated_gif") {
-          const video_variants = media.video_info.variants;
-          // @ts-ignore
-          const highest_bitrate = video_variants.reduce((prev, current) =>
-            prev.bitrate > current.bitrate ? prev : current
-          );
-          console.log(highest_bitrate.url);
-          sendDownloadMessage(
-            tweet_author,
-            tweet_id,
-            1,
-            highest_bitrate.url,
-            "jpg"
-          );
-          // fetch video and save it to downloads
-          // fetch(highest_bitrate.url)
-          //   .then((response: Response) => {
-          //     const reader = response.body!.getReader();
-          //     const chunks: any[] = [];
+          if (type === "photo") {
+            const photo_url = media.media_url_https;
+            const large_photo_url =
+              photo_url.split(".jpg")[0] + "?format=jpg&name=large";
 
-          //     return reader
-          //       .read()
-          //       .then(function processChunk({ done, value }): any {
-          //         if (done) {
-          //           // Create a blob from the collected chunks
-          //           const blob = new Blob(chunks, { type: "video/mp4" });
-          //           const blobUrl = URL.createObjectURL(blob);
+            sendDownloadMessage(
+              tweet_author,
+              tweet_id,
+              i + 1,
+              large_photo_url,
+              "jpg"
+            );
+            // fetch(large_photo_url)
+            //   .then((response) => response.blob())
+            //   .then((blob) => {
+            //     const blobUrl = URL.createObjectURL(blob);
+            //     // Create an anchor element and trigger a download
+            //     const a = document.createElement("a");
+            //     a.href = blobUrl;
+            //     if (type == "animated_gif" || type == "video") {
+            //       a.download = `${tweet_id}.mp4`;
+            //     } else if (type == "photo") {
+            //       a.download = `${tweet_id}.jpg`;
+            //     }
+            //     document.body.appendChild(a);
+            //     a.click();
+            //     // Clean up
+            //     a.remove();
+            //     URL.revokeObjectURL(blobUrl);
+            //   });
+          } else if (type === "video" || type === "animated_gif") {
+            const video_variants = media.video_info.variants;
+            // @ts-ignore
+            const highest_bitrate = video_variants.reduce((prev, current) =>
+              prev.bitrate > current.bitrate ? prev : current
+            );
+            console.log(highest_bitrate.url);
+            sendDownloadMessage(
+              tweet_author,
+              tweet_id,
+              i + 1,
+              highest_bitrate.url,
+              "mp4" // i accidentally kept it as jpg and it somehow still dl'd as mp4 - strange
+            );
+            // fetch video and save it to downloads
+            // fetch(highest_bitrate.url)
+            //   .then((response: Response) => {
+            //     const reader = response.body!.getReader();
+            //     const chunks: any[] = [];
 
-          //           // Create an anchor element and trigger a download
-          //           const a = document.createElement("a");
-          //           a.href = blobUrl;
+            //     return reader
+            //       .read()
+            //       .then(function processChunk({ done, value }): any {
+            //         if (done) {
+            //           // Create a blob from the collected chunks
+            //           const blob = new Blob(chunks, { type: "video/mp4" });
+            //           const blobUrl = URL.createObjectURL(blob);
 
-          //           if (type == "animated_gif" || type == "video") {
-          //             a.download = `${tweet_id}.mp4`;
-          //           } else if (type == "photo") {
-          //             a.download = `${tweet_id}.mp4`;
-          //           }
-          //           document.body.appendChild(a);
-          //           a.click();
+            //           // Create an anchor element and trigger a download
+            //           const a = document.createElement("a");
+            //           a.href = blobUrl;
 
-          //           // Clean up
-          //           a.remove();
-          //           URL.revokeObjectURL(blobUrl);
-          //           return;
-          //         }
+            //           if (type == "animated_gif" || type == "video") {
+            //             a.download = `${tweet_id}.mp4`;
+            //           } else if (type == "photo") {
+            //             a.download = `${tweet_id}.mp4`;
+            //           }
+            //           document.body.appendChild(a);
+            //           a.click();
 
-          //         // Append chunk to chunks array
-          //         chunks.push(value);
+            //           // Clean up
+            //           a.remove();
+            //           URL.revokeObjectURL(blobUrl);
+            //           return;
+            //         }
 
-          //         // Continue reading the stream
-          //         return reader.read().then(processChunk);
-          //       });
-          //   })
-          //   .catch((err) => {
-          //     console.error("Failed to download video:", err);
-          //   });
+            //         // Append chunk to chunks array
+            //         chunks.push(value);
+
+            //         // Continue reading the stream
+            //         return reader.read().then(processChunk);
+            //       });
+            //   })
+            //   .catch((err) => {
+            //     console.error("Failed to download video:", err);
+            //   });
+          }
         }
       })
       .catch((err) => {
