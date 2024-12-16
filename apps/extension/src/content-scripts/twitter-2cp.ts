@@ -7,10 +7,6 @@ import { Download } from "@aru/messages/src/TwitterDownload";
 import { execPath } from "process";
 
 const tweetUrlRegex = /^\/(.+)\/status\/([0-9]+)$/;
-const srcNameReplaceRegex =
-  /^(https\:\/\/pbs\.twimg\.com\/media\/.+\?format=.+&name=)(.+)$/;
-const srcFormatMatchRegex =
-  /^https\:\/\/pbs\.twimg\.com\/media\/.+\?format=(.+)&name=.+$/;
 
 // After a click anywhere on the page, checks the eventPath to see if the click originates within a like element. If so, return that element.
 const getTweetIfLiked = (eventPath: Array<HTMLElement>): HTMLElement | null => {
