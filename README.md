@@ -1,3 +1,3 @@
 # ARUTILITIES
 
-![Rikuhachima Aru](./apps/web/public/images/Aru.png)
+<!-- ![Rikuhachima Aru](./apps/web/public/images/Aru.png) -->
